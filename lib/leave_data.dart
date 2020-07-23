@@ -4,18 +4,19 @@ Widget leavesData(int leavesAllowed, int absent) {
 
   int leftLeave = leavesAllowed - absent;
 
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: <Widget>[
-      SizedBox(width: 20,),
-      Expanded(
-        child: Container(
-          height: 70,
+  return Center(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        //SizedBox(width: 20,),
+        Container(
+          height: 70.0,
+          width: 100.0,
           child: RaisedButton(
             disabledColor: Colors.white,
             onPressed: null,
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(4.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,15 +41,14 @@ Widget leavesData(int leavesAllowed, int absent) {
             ),
           ),
         ),
-      ),
-      SizedBox(width: 10,),
-      Expanded(
-        child: Container(
-          height: 70,
+        //SizedBox(width: 10,),
+        Container(
+          height: 70.0,
+          width: 100.0,
           child: RaisedButton(
             disabledColor: Colors.white,
             onPressed: null,
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(4.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,16 +73,15 @@ Widget leavesData(int leavesAllowed, int absent) {
             ),
           ),
         ),
-      ),
-      SizedBox(width: 10,),
-      Expanded(
-        child: Container(
-          height: 70,
+        //SizedBox(width: 10,),
+        Container(
+          height: 70.0,
+          width: 100.0,
           child: RaisedButton(
             disabledColor: Colors.white,
             onPressed: null,
             //hoverElevation: 100,
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(4.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,8 +106,7 @@ Widget leavesData(int leavesAllowed, int absent) {
             ),
           ),
         ),
-      ),
-      SizedBox(width: 20,),
+        //SizedBox(width: 20,),
 //                SizedBox(width: 20,),
 //                Expanded(
 //                  child: FractionallySizedBox(
@@ -227,6 +225,7 @@ Widget leavesData(int leavesAllowed, int absent) {
 //                    ],
 //                  ),
 //
-    ],
+      ],
+    ),
   );
 }
