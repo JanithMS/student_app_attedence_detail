@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:student_app_02/course_title.dart';
+import 'package:student_app_02/table_cal.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'leave_data.dart';
@@ -34,8 +35,8 @@ class _courseDetailState extends State<courseDetail> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(child: courseTitle(courseID, courseName)),
-              Container(child: leavesData(leaveAllowed,absent)),
+              courseTitle(courseID, courseName),
+              leavesData(leaveAllowed,absent),
               //SizedBox(height: 50,),
               Container(
                 child: Column(
@@ -43,17 +44,16 @@ class _courseDetailState extends State<courseDetail> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                          padding: const EdgeInsets.symmetric(vertical: 1,horizontal: 16),
-                          child: TableCalendar(
-                              calendarController: CalendarController(),
-                              startingDayOfWeek: StartingDayOfWeek.monday,
-//                          calendarStyle: CalendarStyle(
-//                            selectedColor: Colors.deepOrange[400],
-//                            todayColor: Colors.deepOrange[200],
-//                            markersColor: Colors.brown[700],
-//                            outsideDaysVisible: false,
-//                          )
-                              )),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 1, horizontal: 16),
+                                child: TabCal(),
+                              )
+                            ]),),
                     ]),
               ),
               //SizedBox(height: 300,),
