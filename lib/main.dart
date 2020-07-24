@@ -3,22 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:student_app_02/course_title.dart';
 import 'package:student_app_02/table_cal.dart';
+import 'package:student_app_02/temp.dart';
 import 'leave_data.dart';
 
 void main() {
   runApp(MaterialApp(
     home: CourseDetail(),
   ));
-}
-
-class Person {
-  static var absent = 0;
-
-  void addn() {
-    absent++;
-  }
-
-  ret() => absent;
 }
 
 class CourseDetail extends StatefulWidget {
@@ -30,7 +21,7 @@ class _CourseDetailState extends State<CourseDetail> {
   String courseID = 'ED5017';
   String courseName = 'Digital Signal Processing';
   int leaveAllowed = 8;
-  Person per = Person();
+  Person per = new Person();
 
   @override
   Widget build(BuildContext context) {
