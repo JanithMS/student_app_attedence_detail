@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 Widget leavesData(int leavesAllowed, int absent) {
-
   int leftLeave = leavesAllowed - absent;
 
   return Center(

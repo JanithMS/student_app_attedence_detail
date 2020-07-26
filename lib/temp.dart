@@ -1,5 +1,5 @@
 class Person {
-  static int _absent = 0;
+  static var _absent = 0;
 
   void addn() {
     _absent++;

@@ -21,6 +21,7 @@ class _CourseDetailState extends State<CourseDetail> {
   String courseID = 'ED5017';
   String courseName = 'Digital Signal Processing';
   int leaveAllowed = 8;
+  static var absent = 0;
   Person per = new Person();
 
   @override
@@ -33,7 +34,7 @@ class _CourseDetailState extends State<CourseDetail> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               courseTitle(courseID, courseName),
-              leavesData(leaveAllowed, per.ret()),
+              leavesData(leaveAllowed, absent),
               //SizedBox(height: 50,),
               Container(
                 child: Column(
@@ -46,10 +47,16 @@ class _CourseDetailState extends State<CourseDetail> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 1, horizontal: 16),
-                                child: TabCal(),
-                              )
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 1, horizontal: 16),
+                                  child: TabCal(
+                                    add: (DateTime dateTime,
+                                        DateTime dateTime1) {
+                                      setState(() {
+                                        absent++;
+                                      });
+                                    },
+                                  ))
                             ]),
                       ),
                     ]),

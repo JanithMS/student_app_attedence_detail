@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:student_app_02/temp.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import 'main.dart';
-
 class TabCal extends StatefulWidget {
-  TabCal({Key key}) : super(key: key);
+  final Function add;
+  const TabCal({Key key, this.add}) : super(key: key);
 
-  @override
-  _TabCal createState() => _TabCal();
+  @required
+  _TabCal createState() => _TabCal(add);
 }
 
 class _TabCal extends State<TabCal> {
   CalendarController _calendarController;
-  Person per = new Person();
+
+  Function add;
+  _TabCal(this.add);
+
   @override
   void initState() {
     super.initState();
@@ -28,22 +29,17 @@ class _TabCal extends State<TabCal> {
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
-        calendarController: _calendarController,
-        startingDayOfWeek: StartingDayOfWeek.monday,
-        availableCalendarFormats: {CalendarFormat.month: 'Month'},
-        onDayLongPressed: onDayLongPressed(),
+      calendarController: _calendarController,
+      startingDayOfWeek: StartingDayOfWeek.monday,
+      availableCalendarFormats: {CalendarFormat.month: 'Month'},
+      onDayLongPressed:
+          add, /*
         calendarStyle: CalendarStyle(
           selectedColor: Colors.deepOrange[400],
           todayColor: Colors.deepOrange[200],
           markersColor: Colors.brown[700],
           outsideDaysVisible: false,
-        ));
-  }
-
-  onDayLongPressed() {
-    per.addn();
-    runApp(MaterialApp(
-      home: CourseDetail(),
-    ));
+        )*/
+    );
   }
 }
