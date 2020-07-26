@@ -23,6 +23,9 @@ class _CourseDetailState extends State<CourseDetail> {
   int leaveAllowed = 8;
   static var absent = 0;
   Person per = new Person();
+  List<String> temp = [
+    ('abcd'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +53,7 @@ class _CourseDetailState extends State<CourseDetail> {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 1, horizontal: 16),
                                   child: TabCal(
-                                    add: (DateTime dateTime,
-                                        DateTime dateTime1) {
+                                    add: (DateTime dateTime, List temp) {
                                       setState(() {
                                         absent++;
                                       });
